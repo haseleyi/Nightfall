@@ -1,1 +1,11 @@
-# Nightfall
+Dependencies: Just some good old internet - https://haseleyi.itch.io/nightfall
+
+Nightfall is a horror game with puzzle elements. In its single player vs. computer interaction pattern, the player begins by exploring a sparse area occupied by a series of shacks. As they open doors, they are met with an unnerving countdown and warnings of an impending threat. Darkness approaches, and a flashlight soon becomes necessary to investigate further. 
+
+The final shack in this progression contains the threat: a child gone wrong, singing until disturbed by the player. The enemy approaches the player’s flashlight beam should the light turn on. When caught in its cone, he acts as though a deer in headlights, then attacks. The player’s options are limited: turn it off and run. It’s with this threat that players must navigate the darkness and discover a means of escaping the area.
+
+Controls are those of typical first-person games: AWSD to move and mouse to look. Players are occasionally prompted with an opportunity to interact with their environment by clicking. Both the space bar and right-click serve to enable or disable the flashlight, and P pauses the game.
+
+While not necessary to succeed in the game, experience with this traditional control scheme will prove useful to Nightfall’s players. For this reason, the game primarily targets gamers with at least minimal familiarity with its control style, but seeks to appeal to a wide range of audiences therein: those looking for a short, tense, immersive experience, one which values atmosphere over violence and relies less on skill than on presence and discipline.
+
+Atmosphere is crucial to success in the horror genre, and Nightfall harnesses a variety of tropes to create a creepy experience. The player moves slowly and without a sprint, which builds tension by conveying a mild sense of helplessness. To make players feel trapped, the game takes place in quickly progressing darkness, provides a flashlight that creates blind spots, and places a cost on using the light in the first place. Nightfall’s “soundtrack” is little more than ambiance, a choice made to create a more immersive experience and minimize the extent to which one feels they’re playing a game and controlling a character separate from themselves.
