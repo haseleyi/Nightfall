@@ -31,6 +31,7 @@ public class EnemyController : MonoBehaviour {
 		chasing = Chasing.NOTHING;
 		flickerCoroutineRunning = false;
 		m_AudioSource = GetComponent<AudioSource>();
+//		StartCoroutine (DebugCoroutine ());
 	}
 
 	void Update() {
@@ -50,6 +51,20 @@ public class EnemyController : MonoBehaviour {
 		ChaseIfLookingDownAndClose ();
 	}
 
+	/// <summary>
+	/// All-purpose helper method for debugging enemy behavior
+	/// </summary>
+	/// <returns>The coroutine.</returns>
+	IEnumerator DebugCoroutine() {
+		while (true) {
+			print ("===== STATUS =====");
+			print ("My pos: " + transform.position.ToString ());
+			print ("My dest: " + agent.destination.ToString ());
+			print ("Distance between: " + Vector3.Distance (transform.position, agent.destination).ToString());
+			print ("Chasing: " + chasing.ToString());
+			yield return new WaitForSeconds (.1f);
+		}
+	}
 
 	/// <summary>
 	/// Checks flashlight status

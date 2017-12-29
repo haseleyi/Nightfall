@@ -22,7 +22,7 @@ public class House : MonoBehaviour {
 	public bool doorOpen = false;
 	public bool doorLocked = false; 
     public bool hasOpened = false;
-	bool playerNear = false; // Reflects if the player in the door collider
+	bool playerNear = false; // reflects if the player in the door collider
 
 
 	void Start () {
@@ -30,7 +30,7 @@ public class House : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		audioSource = GetComponent<AudioSource>();
 
-        // Get positions for each corner of the house's two rectangles
+        // get positions for each corner of the house's two rectangles
 		c0 = corners [0].transform.position;
 		c1 = corners [1].transform.position;
 		c2 = corners [2].transform.position;
@@ -55,24 +55,13 @@ public class House : MonoBehaviour {
 
 
 	/// <summary>
-	/// Helper method for playing singing within a house
+	/// Plays singing from inside this house
 	/// </summary>
 	public void PlaySinging() {
-		StartCoroutine (PlaySingingCoroutine ());
-	}
-
-
-	/// <summary>
-	/// Loops singing within house
-	/// </summary>
-	/// <returns>The singing coroutine.</returns>
-	IEnumerator PlaySingingCoroutine() {
-		while (true) {
-			GameObject songObject = this.transform.Find ("SongObject").gameObject;
-			AudioSource player = songObject.GetComponent<AudioSource> ();
-			player.PlayOneShot(player.clip, 3);
-			yield return new WaitForSeconds (86);
-		}
+		GameObject songObject = this.transform.Find ("SongObject").gameObject;
+		AudioSource player = songObject.GetComponent<AudioSource> ();
+		player.Play();
+		player.loop = true;
 	}
 
 
@@ -83,7 +72,6 @@ public class House : MonoBehaviour {
 		GameObject songObject = this.transform.Find ("SongObject").gameObject;
 		AudioSource player = songObject.GetComponent<AudioSource> ();
 		player.Stop ();
-		StopCoroutine (PlaySingingCoroutine ());
 	}
 
 

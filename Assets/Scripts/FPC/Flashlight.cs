@@ -11,15 +11,11 @@ public class Flashlight : MonoBehaviour {
 	public EnemyController enemyForTeleporting;
 
 	Light fl;
-	Camera offCam, mainCam;
 	bool turningOn, turningOff;
 
 	void Start () {
 		instance = this;
 		fl = GetComponent<Light> ();
-		GameObject deathCamera = GameObject.Find ("DeathCamera");
-		offCam = deathCamera.gameObject.GetComponent<Camera> ();
-		mainCam = Camera.main;
 	}
 
 
@@ -58,8 +54,6 @@ public class Flashlight : MonoBehaviour {
 		}
 		fl.enabled = !fl.enabled;
 		turningOn = false;
-		mainCam.enabled = true;
-		offCam.enabled = false;
 	}
 
 
@@ -73,7 +67,5 @@ public class Flashlight : MonoBehaviour {
 		yield return new WaitForSeconds (.35f);
 		fl.enabled = !fl.enabled;
 		turningOff = false;
-		mainCam.enabled = false;
-		offCam.enabled = true;
 	}
 }

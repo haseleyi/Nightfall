@@ -10,15 +10,14 @@ public class EnemyAnimationController : MonoBehaviour {
 
 	EnemyController controller;
 	Animator animator;
-	Camera offCam, mainCam;
+	Camera cam;
 	bool running;
 
 	void Start () {
 		controller = GetComponentInParent<EnemyController> ();
 		animator = GetComponent<Animator> ();
 		GameObject deathCamera = GameObject.Find ("DeathCamera");
-		offCam = deathCamera.gameObject.GetComponent<Camera> ();
-		mainCam = Camera.main;
+		cam = deathCamera.gameObject.GetComponent<Camera> ();
 		running = false;
 	}
 
@@ -56,13 +55,11 @@ public class EnemyAnimationController : MonoBehaviour {
 	/// </summary>
 	/// <returns>The coroutine.</returns>
 	IEnumerator KillCoroutine() {
-		mainCam.enabled = true;
-		offCam.enabled = false;
 		animator.SetBool ("isKilling", true);
 		yield return new WaitForSeconds (1.25f);
 		SoundManager.instance.deathFade.Play ();
-		offCam.enabled = true;
-		mainCam.enabled = false;
+		Camera.main.enabled = false;
+		cam.enabled = true;
 		yield return new WaitForSeconds (2.7f);
 		SceneManager.LoadScene (SceneManager.GetActiveScene().buildIndex);
 	}

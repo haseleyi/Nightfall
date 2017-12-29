@@ -179,7 +179,7 @@ public class PuzzleManager: MonoBehaviour {
 	/// <summary>
 	/// Initalizes the state USECOMBO
 	/// </summary>
-	public void InitiateUSECOMBO() {
+	public void InitiateUSECOMBO(){
 		CloseAllDoors ();
 		gameState = States.USECOMBO;
 	}
